@@ -113,6 +113,27 @@
     padding-left: 18px;
     margin-top: 4px;
   }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 14px;
+  }
+  th, td {
+    border: 1px solid #d5deea;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #1f4e79;
+    color: white;
+  }
+  tr:nth-child(odd) td {
+    background: #f7f9fc;
+  }
+  a {
+    color: #2e75b6;
+  }
   footer {
     text-align: center;
     font-size: 0.85em;
@@ -124,7 +145,7 @@
 <body>
 
 <header>
-  <p class="predmet">Razvoj produktov in storitev (RPS) · skupinski projekt</p>
+  <p class="predmet">Razvoj produktov in storitev (RPS) · skupinski projekt · Dijaško tutorstvo</p>
   <h1>DijakPomaga</h1>
   <p class="podnaslov">Spletna platforma, kjer dijaki hitro najdejo pomoč pri učenju ali pa svoje znanje ponudijo sošolcem.</p>
   <p class="skupina">Skupina: Timotej Pučko, Lan Lerher, Marko Laptuš · 2. D, SERŠ Maribor</p>
@@ -136,15 +157,40 @@
   <h2>Opis projekta</h2>
   <p>Pri učenju se večkrat zatakne pri nalogi ali snovi, ki je sam ne razumeš, profesor pa takrat ni na voljo. Dijaki potem sprašujemo sošolce na Discordu ali v zasebnih sporočilih, vendar se vprašanja hitro izgubijo med drugimi sporočili. Hkrati je na šoli veliko dijakov, ki določeno snov dobro znajo in bi radi pomagali, ampak nimajo mesta, kjer bi to lahko ponudili.</p>
   <p>Zato v skupini razvijamo <b>DijakPomaga</b>, spletno platformo za medsebojno pomoč dijakov. Dijak objavi, pri katerem predmetu ali nalogi potrebuje pomoč, drugi dijaki pa se mu javijo. Vsak ima svoj profil, kjer označi predmete, pri katerih lahko pomaga, zato se da pomoč poiskati tudi po predmetu in letniku.</p>
-  <h3>Kaj bo znala prva verzija</h3>
-  <ul>
-    <li>prijava s šolskim računom,</li>
-    <li>objava prošnje za pomoč (predmet, opis težave, do kdaj),</li>
-    <li>profil dijaka s predmeti, pri katerih lahko pomaga,</li>
-    <li>iskanje pomoči po predmetu in letniku,</li>
-    <li>sporočila med dijakom, ki išče pomoč, in dijakom, ki pomaga,</li>
-    <li>zahvala in ocena po opravljeni pomoči.</li>
-  </ul>
+  <p>Prva verzija (MVP) bo imela samo dve funkciji: objavo prošnje za pomoč in odziv na prošnjo. Vse ostalo pride v verziji 2.0, kot je zapisano v projektni listini spodaj.</p>
+</section>
+
+<section>
+  <h2>Projektna listina</h2>
+  <p>Projektna listina je dogovor naše ekipe o tem, kateri problem rešujemo, kaj bo v prvi verziji in kdo je za kaj odgovoren. Celotna listina je v repozitoriju: <a href="https://github.com/LovkarDijak/rps-skupinski-projekt/blob/main/docs/PROJEKTNA_LISTINA.md">docs/PROJEKTNA_LISTINA.md</a>.</p>
+  <h3>Problem</h3>
+  <p>Dijaki ne vedo, koga vprašati za pomoč, ko se pri učenju zatakne, vprašanja na Discordu pa se hitro izgubijo. Dijaki, ki snov znajo, nimajo mesta, kjer bi pomoč ponudili. Z aplikacijo olajšamo delo dijakom, ki pomoč iščejo, in tistim, ki jo nudijo.</p>
+  <div class="kartice">
+    <div class="kartica">
+      <h3>V obsegu – MVP</h3>
+      <ul>
+        <li><b>Objava prošnje za pomoč:</b> predmet, letnik, opis težave in kontakt, seznam prošenj s filtrom po predmetu.</li>
+        <li><b>Odziv na prošnjo:</b> gumb »Pomagam«, statusa »v teku« in »rešeno«.</li>
+      </ul>
+    </div>
+    <div class="kartica">
+      <h3>Izven obsega – verzija 2.0</h3>
+      <ul>
+        <li>prijava s šolskim računom in profili,</li>
+        <li>klepet znotraj aplikacije,</li>
+        <li>ocene, zahvale in točke,</li>
+        <li>koledar terminov, obvestila, mobilna aplikacija.</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Vloge v ekipi</h3>
+  <table>
+    <tr><th>Član ekipe</th><th>Vloga</th><th>Naloge</th></tr>
+    <tr><td>Marko Laptuš</td><td>skrbnik baze in zaledja</td><td>podatkovni model prošenj, shranjevanje podatkov, logika statusov</td></tr>
+    <tr><td>Timotej Pučko</td><td>vmesnikar</td><td>izgled strani, obrazec za objavo, seznam in filter</td></tr>
+    <tr><td>Lan Lerher</td><td>testiravec</td><td>testni primeri, iskanje napak, preverjanje z uporabniki</td></tr>
+  </table>
+  <p>Vsa orodja, ki jih uporabljamo (GitHub, GitHub Pages, VS Code), so za dijake brezplačna, zato so stroški projekta praktično 0 €. Persona in zemljevid empatije, ki sta tudi del listine, sta opisana spodaj.</p>
 </section>
 
 <section>

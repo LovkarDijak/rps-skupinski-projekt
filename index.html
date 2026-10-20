@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DijakPomaga – skupinski projekt RPS</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f2f5fa;
+    color: #222;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, #1f4e79, #2e75b6);
+    color: white;
+    text-align: center;
+    padding: 40px 20px 32px;
+  }
+  header h1 {
+    margin: 4px 0;
+    font-size: 2.6em;
+  }
+  header .predmet {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85em;
+    opacity: 0.85;
+  }
+  header .podnaslov {
+    font-size: 1.15em;
+    max-width: 650px;
+    margin: 10px auto;
+  }
+  header .skupina {
+    font-size: 0.9em;
+    opacity: 0.9;
+  }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 20px 30px;
+  }
+  section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 28px;
+    margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  h2 {
+    color: #1f4e79;
+    border-bottom: 3px solid #f4b183;
+    padding-bottom: 6px;
+  }
+  h3 {
+    color: #2e75b6;
+    margin-bottom: 6px;
+  }
+  .persona {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .persona figure {
+    margin: 0;
+    flex: 0 0 260px;
+    text-align: center;
+  }
+  .persona img {
+    width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  .persona figcaption {
+    font-size: 0.8em;
+    color: #666;
+  }
+  .persona .podatki {
+    flex: 1;
+    min-width: 260px;
+  }
+  .persona .vloga {
+    margin-top: 0;
+    color: #c55a11;
+    font-weight: bold;
+  }
+  blockquote {
+    margin: 12px 0;
+    padding: 10px 16px;
+    background: #fff4ec;
+    border-left: 5px solid #f4b183;
+    font-style: italic;
+  }
+  .podatki ul {
+    padding-left: 18px;
+  }
+  .kartice {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .kartica {
+    background: #f7f9fc;
+    border: 1px solid #d5deea;
+    border-radius: 10px;
+    padding: 4px 16px 10px;
+  }
+  .kartica ul {
+    padding-left: 18px;
+    margin-top: 4px;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.85em;
+    color: #666;
+    padding: 10px 20px 30px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="predmet">Razvoj produktov in storitev (RPS) · skupinski projekt</p>
+  <h1>DijakPomaga</h1>
+  <p class="podnaslov">Spletna platforma, kjer dijaki hitro najdejo pomoč pri učenju ali pa svoje znanje ponudijo sošolcem.</p>
+  <p class="skupina">Skupina: Timotej Pučko, Lan Lerher, Marko Laptuš · 2. D, SERŠ Maribor</p>
+</header>
+
+<main>
+
+<section>
+  <h2>Opis projekta</h2>
+  <p>Pri učenju se večkrat zatakne pri nalogi ali snovi, ki je sam ne razumeš, profesor pa takrat ni na voljo. Dijaki potem sprašujemo sošolce na Discordu ali v zasebnih sporočilih, vendar se vprašanja hitro izgubijo med drugimi sporočili. Hkrati je na šoli veliko dijakov, ki določeno snov dobro znajo in bi radi pomagali, ampak nimajo mesta, kjer bi to lahko ponudili.</p>
+  <p>Zato v skupini razvijamo <b>DijakPomaga</b>, spletno platformo za medsebojno pomoč dijakov. Dijak objavi, pri katerem predmetu ali nalogi potrebuje pomoč, drugi dijaki pa se mu javijo. Vsak ima svoj profil, kjer označi predmete, pri katerih lahko pomaga, zato se da pomoč poiskati tudi po predmetu in letniku.</p>
+  <h3>Kaj bo znala prva verzija</h3>
+  <ul>
+    <li>prijava s šolskim računom,</li>
+    <li>objava prošnje za pomoč (predmet, opis težave, do kdaj),</li>
+    <li>profil dijaka s predmeti, pri katerih lahko pomaga,</li>
+    <li>iskanje pomoči po predmetu in letniku,</li>
+    <li>sporočila med dijakom, ki išče pomoč, in dijakom, ki pomaga,</li>
+    <li>zahvala in ocena po opravljeni pomoči.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Persona</h2>
+  <div class="persona">
+    <figure>
+      <img src="persona.jpg" alt="Persona Marko Novak, dijak za prenosnikom">
+      <figcaption>Slika persone (izdelana z AI orodjem)</figcaption>
+    </figure>
+    <div class="podatki">
+      <h3>Marko Novak</h3>
+      <p class="vloga">Dijak, ki išče in nudi pomoč</p>
+      <blockquote>»Včasih potrebujem samo nekoga, ki mi zna snov razložiti na preprost način, hkrati pa bi tudi sam rad pomagal sošolcem pri stvareh, ki jih dobro razumem.«</blockquote>
+      <ul>
+        <li><b>Starost:</b> 18 let</li>
+        <li><b>Šola:</b> 3. letnik, program tehnik računalništva, SERŠ Maribor</li>
+        <li><b>Tehnično znanje:</b> napredno (HTML, CSS, JavaScript, osnove PHP in MySQL, GitHub)</li>
+        <li><b>Orodja:</b> VS Code, GitHub, Discord, Figma, spletna učilnica</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Kdo je Marko</h3>
+  <p>Marko je zavzet dijak, ki ga zanimajo računalništvo, programiranje in nove tehnologije. Pri nekaterih predmetih mu gre zelo dobro, pri drugih pa ima pri težjih nalogah težave. Ko potrebuje pomoč, najprej vpraša sošolce na Discordu, vendar je tak način nepregleden in odgovor pogosto dobi šele, ko ga ne potrebuje več. Ker sam dobro obvlada programiranje, bi rad pomagal tudi drugim, a ne ve, kdo pomoč sploh potrebuje.</p>
+
+  <div class="kartice">
+    <div class="kartica">
+      <h3>Cilji in motivacija</h3>
+      <ul>
+        <li>hitro najti sošolca, ki mu razloži snov ali nalogo,</li>
+        <li>svoje znanje deliti z drugimi in jim pomagati,</li>
+        <li>z razlaganjem drugim še sam bolje utrditi snov,</li>
+        <li>najti sošolce za skupno učenje.</li>
+      </ul>
+    </div>
+    <div class="kartica">
+      <h3>Frustracije</h3>
+      <ul>
+        <li>ne ve, na koga se lahko obrne, ko se zatakne,</li>
+        <li>ni enega mesta, kjer bi videl, kdo pomaga pri katerem predmetu,</li>
+        <li>vprašanja na Discordu se hitro izgubijo,</li>
+        <li>dijaki z znanjem in dijaki s težavami se težko najdejo.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Zemljevid empatije</h2>
+  <div class="kartice">
+    <div class="kartica">
+      <h3>Kaj misli in čuti?</h3>
+      <ul>
+        <li>»Koga lahko vprašam, ko profesorja ni?«</li>
+        <li>Vesel je, ko sošolcu pomaga rešiti problem.</li>
+        <li>Bolj je motiviran, ko se uči skupaj z drugimi.</li>
+      </ul>
+    </div>
+    <div class="kartica">
+      <h3>Kaj sliši?</h3>
+      <ul>
+        <li>Profesorje: »Če česa ne razumete, vprašajte.«</li>
+        <li>Sošolce: »A kdo zna rešiti to nalogo?«</li>
+      </ul>
+    </div>
+    <div class="kartica">
+      <h3>Kaj vidi?</h3>
+      <ul>
+        <li>Sošolce s težavami, ki ne vedo, koga vprašati.</li>
+        <li>Nepregledna sporočila na Discordu.</li>
+        <li>Spletno učilnico, ki je za gradivo in naloge, ne pa za pomoč med dijaki.</li>
+      </ul>
+    </div>
+    <div class="kartica">
+      <h3>Kaj govori in dela?</h3>
+      <ul>
+        <li>Na Discordu sprašuje za pomoč pri težjih nalogah.</li>
+        <li>Pomaga sošolcem pri programiranju.</li>
+        <li>Deli povezave, zapiske in razlage.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Opis projekta pripravil Marko Laptuš, 2. D · RPS, šolsko leto 2026/27
+</footer>
+
+</body>
+</html>

@@ -162,35 +162,47 @@
 
 <section>
   <h2>Projektna listina</h2>
-  <p>Projektna listina je dogovor naše ekipe o tem, kateri problem rešujemo, kaj bo v prvi verziji in kdo je za kaj odgovoren. Celotna listina je v repozitoriju: <a href="https://github.com/LovkarDijak/rps-skupinski-projekt/blob/main/docs/PROJEKTNA_LISTINA.md">docs/PROJEKTNA_LISTINA.md</a>.</p>
-  <h3>Problem</h3>
-  <p>Dijaki ne vedo, koga vprašati za pomoč, ko se pri učenju zatakne, vprašanja na Discordu pa se hitro izgubijo. Dijaki, ki snov znajo, nimajo mesta, kjer bi pomoč ponudili. Z aplikacijo olajšamo delo dijakom, ki pomoč iščejo, in tistim, ki jo nudijo.</p>
+  <p>Projektna listina je dogovor naše ekipe DijakPomaga o tem, kateri problem rešujemo, kaj bo v prvi verziji in kdo je za kaj odgovoren. Izpolnili smo jo po šolskem obrazcu. Celotna listina je v repozitoriju: <a href="https://github.com/LovkarDijak/rps-skupinski-projekt/blob/main/docs/PROJEKTNA_LISTINA.md">docs/PROJEKTNA_LISTINA.md</a>, tudi kot <a href="https://github.com/LovkarDijak/rps-skupinski-projekt/blob/main/docs/Laptus_Marko_2D_RPS_projektna_listina.docx">Word dokument</a>.</p>
+  <h3>Problem in cilj MVP</h3>
+  <p>Dijaki ob težavah pri učenju pomoč iščejo na Discordu ali v zasebnih sporočilih, kjer se vprašanja hitro izgubijo, in ne vedo, kdo na šoli zna določeno snov. Dijaki, ki bi radi pomagali, nimajo mesta, kjer bi pomoč ponudili.</p>
+  <p><b>Cilj MVP:</b> spletna aplikacija, v kateri dijak prek obrazca objavi prošnjo za pomoč pri predmetu, drugi dijaki pa na seznamu vidijo odprte prošnje in se nanje s klikom »Pomagam« odzovejo.</p>
   <div class="kartice">
     <div class="kartica">
-      <h3>V obsegu – MVP</h3>
+      <h3>V obsegu – MVP (2 funkciji z bazo)</h3>
       <ul>
-        <li><b>Objava prošnje za pomoč:</b> predmet, letnik, opis težave in kontakt, seznam prošenj s filtrom po predmetu.</li>
-        <li><b>Odziv na prošnjo:</b> gumb »Pomagam«, statusa »v teku« in »rešeno«.</li>
+        <li><b>Objava prošnje za pomoč:</b> HTML obrazec, PHP validacija, zapis v bazo (INSERT INTO prosnje): ime, razred, predmet, opis težave in kontakt.</li>
+        <li><b>Pregled prošenj in odziv:</b> izpis iz baze (SELECT) na karticah s Pico.css, filter po predmetu in gumb »Pomagam«, ki prošnji nastavi status »v teku«.</li>
       </ul>
     </div>
     <div class="kartica">
-      <h3>Izven obsega – verzija 2.0</h3>
+      <h3>Izven obsega – faza 2.0</h3>
       <ul>
         <li>prijava s šolskim računom in profili,</li>
-        <li>klepet znotraj aplikacije,</li>
-        <li>ocene, zahvale in točke,</li>
-        <li>koledar terminov, obvestila, mobilna aplikacija.</li>
+        <li>klepet v živo med dijakoma,</li>
+        <li>ocene in točke za tutorje,</li>
+        <li>obvestila po e-pošti in na telefon,</li>
+        <li>mobilna aplikacija in koledar terminov.</li>
       </ul>
     </div>
   </div>
   <h3>Vloge v ekipi</h3>
   <table>
-    <tr><th>Član ekipe</th><th>Vloga</th><th>Naloge</th></tr>
-    <tr><td>Marko Laptuš</td><td>skrbnik baze in zaledja</td><td>podatkovni model prošenj, shranjevanje podatkov, logika statusov</td></tr>
-    <tr><td>Timotej Pučko</td><td>vmesnikar</td><td>izgled strani, obrazec za objavo, seznam in filter</td></tr>
-    <tr><td>Lan Lerher</td><td>testiravec</td><td>testni primeri, iskanje napak, preverjanje z uporabniki</td></tr>
+    <tr><th>Vloga v ekipi</th><th>Član</th><th>Glavne zadolžitve</th></tr>
+    <tr><td>Vodja ekipe &amp; Backend razvijalec</td><td>Marko Laptuš</td><td>načrtovanje PHP logike, usklajevanje dela</td></tr>
+    <tr><td>Frontend razvijalec</td><td>Timotej Pučko</td><td>HTML5 vmesnik s Pico.css: obrazec, seznam in filter</td></tr>
+    <tr><td>Skrbnik podatkovne baze &amp; cPanel</td><td>Marko Laptuš</td><td>tabele v MariaDB, namestitev na šolski strežnik</td></tr>
+    <tr><td>Testiravec &amp; Dokumentalist</td><td>Lan Lerher</td><td>Kanban v GitHub Projects, testiranje, README</td></tr>
   </table>
-  <p>Vsa orodja, ki jih uporabljamo (GitHub, GitHub Pages, VS Code), so za dijake brezplačna, zato so stroški projekta praktično 0 €. Persona in zemljevid empatije, ki sta tudi del listine, sta opisana spodaj.</p>
+  <h3>Tehnološki sklad</h3>
+  <table>
+    <tr><th>Komponenta</th><th>Orodje</th><th>Potrditev</th></tr>
+    <tr><td>Kodno okolje</td><td>github.dev v brskalniku</td><td>DA</td></tr>
+    <tr><td>Zaledje in baza</td><td>PHP 8 + MariaDB na šolskem cPanelu</td><td>DA</td></tr>
+    <tr><td>Oblikovanje</td><td>Pico.css (prek CDN)</td><td>DA</td></tr>
+    <tr><td>Verzioniranje</td><td>Git + šolski GitHub repozitorij</td><td>DA</td></tr>
+    <tr><td>Projektno vodenje</td><td>GitHub Projects (Kanban)</td><td>DA</td></tr>
+  </table>
+  <p>Skupni strošek orodij je 0 €, ker uporabljamo odprto kodo in šolsko infrastrukturo. Persona in zemljevid empatije, ki sta tudi del listine, sta opisana spodaj.</p>
 </section>
 
 <section>
